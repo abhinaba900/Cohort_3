@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASTRO - Winter Armor II</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">ASTRO<span>.</span></div>
+        <nav>
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Category</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn"><i data-lucide="search"></i></button>
+          <button class="icon-btn"><i data-lucide="shopping-bag"></i></button>
+          <button class="icon-btn"><i data-lucide="user"></i></button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="product-info">
+            <h3>New</h3>
+            <h1>Astro<br />Winter<br />Armor <span>II</span></h1>
+            <div class="price">$560</div>
+
+            <div class="description">
+              <h4>Description</h4>
+              <p>
+                A next-gen cold war jacket. The essence of retro style and the
+                resilience you need for extreme winter conditions. Engineered to
+                provide versatile function for your winter wardrobe, accented
+                with strategic utility details.
+              </p>
+              <a href="#" class="read-more"
+                >Read More <i data-lucide="chevron-right"></i
+              ></a>
+            </div>
+
+            <div class="accordions">
+              <div class="accordion-item">
+                <span>Material & Care</span>
+                <i data-lucide="chevron-down"></i>
+              </div>
+              <div class="accordion-item">
+                <span>Shipping & Returns</span>
+                <i data-lucide="chevron-down"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image-container">
+            <img
+              src="image/hero-beige.png"
+              alt="Astro Winter Armor II - Beige"
+              id="main-product-img"
+            />
+          </div>
+
+          <div class="controls">
+            <div class="control-group">
+              <h4>Size</h4>
+              <div class="size-chips">
+                <button class="size-chip">S</button>
+                <button class="size-chip active">M</button>
+                <button class="size-chip">L</button>
+                <button class="size-chip">XL</button>
+              </div>
+              <a href="#" class="size-guide"
+                >Size Guide <i data-lucide="chevron-right"></i
+              ></a>
+            </div>
+
+            <div class="control-group">
+              <h4>Color</h4>
+              <div class="color-variants">
+                <div
+                  class="color-variant active"
+                  data-color="beige"
+                  data-img="image/hero-beige.png"
+                >
+                  <img src="image/hero-beige.png" alt="Beige" />
+                  <span>Beige</span>
+                </div>
+                <div
+                  class="color-variant"
+                  data-color="red"
+                  data-img="image/variant-red.png"
+                >
+                  <img src="image/variant-red.png" alt="Red" />
+                  <span>Red</span>
+                </div>
+                <div
+                  class="color-variant"
+                  data-color="black"
+                  data-img="image/variant-black.png"
+                >
+                  <img src="image/variant-black.png" alt="Black" />
+                  <span>Black</span>
+                </div>
+                <div
+                  class="color-variant"
+                  data-color="white"
+                  data-img="image/variant-white.png"
+                >
+                  <img src="image/variant-white.png" alt="White" />
+                  <span>White</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="wishlist">
+                <i data-lucide="heart"></i> Add to Wishlist
+              </button>
+              <button class="add-to-bag">
+                Add to Bag <i data-lucide="shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="badges-row">
+          <div class="badge">
+            <i data-lucide="snowflake"></i> Extreme Warmth
+          </div>
+          <div class="badge"><i data-lucide="shield"></i> Wind Resistant</div>
+          <div class="badge"><i data-lucide="feather"></i> Lightweight</div>
+        </div>
+
+        <section class="features-grid">
+          <div class="feature-card">
+            <div class="feature-img">
+              <img src="image/feature-water.png" alt="Water Repellent" />
+            </div>
+            <div class="feature-content">
+              <h5>3X Water-Repellent</h5>
+              <p>
+                The fabric repels rain, snow and moisture while keeping you dry
+                and comfortable.
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-img">
+              <img src="image/feature-puffer.png" alt="3D Areas Puffered" />
+            </div>
+            <div class="feature-content">
+              <h5>3D Areas Puffered</h5>
+              <p>
+                Strategically padded zones trap heat and maximize insulation
+                without the bulk.
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-img">
+              <img src="image/feature-insulation.png" alt="Insulation" />
+            </div>
+            <div class="feature-content">
+              <h5>Insulation</h5>
+              <p>
+                Advanced thermal filling locks in warmth up to -30°C for extreme
+                conditions.
+              </p>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-img">
+              <img src="image/feature-pockets.png" alt="Utility Pockets" />
+            </div>
+            <div class="feature-content">
+              <h5>Utility Pockets</h5>
+              <p>Multi-functional pockets for secure storage on the go.</p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="bottom-bar">
+          <div class="bottom-item">
+            <div class="icon"><i data-lucide="layers"></i></div>
+            <div class="text">
+              <h6>Premium Fabrics</h6>
+              <p>Durable, high-performance materials.</p>
+            </div>
+          </div>
+          <div class="bottom-item">
+            <div class="icon"><i data-lucide="thermometer"></i></div>
+            <div class="text">
+              <h6>Thermal Protection</h6>
+              <p>Built for extreme winter climates.</p>
+            </div>
+          </div>
+          <div class="bottom-item">
+            <div class="icon"><i data-lucide="target"></i></div>
+            <div class="text">
+              <h6>Designed for Function</h6>
+              <p>Every detail serves a purpose.</p>
+            </div>
+          </div>
+          <div class="bottom-item">
+            <div class="icon"><i data-lucide="star"></i></div>
+            <div class="text">
+              <h6>Limited Edition</h6>
+              <p>Exclusive drops, limited quantities.</p>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
