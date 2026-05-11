@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loomé. | Exclusive Cotton Collection</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="background-shadow"></div>
+
+    <header>
+      <nav class="container">
+        <div class="logo">loomé<span>.</span></div>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Collection</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <div class="cart-icon">
+            <i data-lucide="shopping-bag"></i>
+            <span class="badge">2</span>
+          </div>
+          <div class="menu-icon">
+            <i data-lucide="menu"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <!-- Left Column: Product Info -->
+        <div class="product-info">
+          <div class="tag">
+            <i data-lucide="leaf"></i>
+            <span>NEW COLLECTION</span>
+          </div>
+
+          <h1 class="product-title">a cotton<br />weave</h1>
+
+          <p class="description">
+            Crafted from 100% organic cotton with a soft, breathable feel.
+            Perfect for all seasons and everyday elegance.
+          </p>
+
+          <div class="color-selection">
+            <span class="label">colors</span>
+            <div class="colors">
+              <div
+                class="color active"
+                style="background-color: #7d846a"
+                data-color="Sage"
+              ></div>
+              <div
+                class="color"
+                style="background-color: #eae3d9"
+                data-color="Cream"
+              ></div>
+              <div
+                class="color"
+                style="background-color: #e8b4b4"
+                data-color="Petal"
+              ></div>
+            </div>
+          </div>
+
+          <div class="product-details">
+            <h3>Details <span class="line"></span></h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Accusamus, sapiente. Ipsam maiores nemo, quidem veniam et atque
+              suscipit, saepe doloribus ab molestiae deserunt? Totam natus
+              eligendi neque.
+            </p>
+          </div>
+
+          <div class="features">
+            <div class="feature">
+              <div class="feature-icon"><i data-lucide="leaf"></i></div>
+              <span>Organic<br />Cotton</span>
+            </div>
+            <div class="feature-divider"></div>
+            <div class="feature">
+              <div class="feature-icon"><i data-lucide="feather"></i></div>
+              <span>Soft &<br />Lightweight</span>
+            </div>
+            <div class="feature-divider"></div>
+            <div class="feature">
+              <div class="feature-icon"><i data-lucide="grid"></i></div>
+              <span>Handmade<br />Weave</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="content-holer-of-main-image-and-info-bar">
+          <!-- Center Column: Main Image -->
+          <div class="product-visual">
+            <div class="vertical-title">
+              <span class="v-text">cotton twill scarf</span>
+            </div>
+
+            <div class="main-image-container">
+              <div class="price-tag">$488</div>
+              <div class="rating-badge">
+                <span>Rating</span>
+                <div class="stars">
+                  <i data-lucide="star" class="star-fill"></i>
+                  <i data-lucide="star" class="star-fill"></i>
+                  <i data-lucide="star" class="star-fill"></i>
+                  <i data-lucide="star" class="star-fill"></i>
+                  <i data-lucide="star" class="star-fill"></i>
+                </div>
+              </div>
+              <img
+                src="assets/hero.png"
+                alt="Main Product"
+                id="main-product-img"
+              />
+              <button class="add-to-bag">
+                <i data-lucide="shopping-bag"></i>
+                <span>Add to bag</span>
+              </button>
+            </div>
+          </div>
+          <!-- Bottom Info Bar -->
+          <section class="info-bar">
+            <div class="info-item">
+              <i data-lucide="shield-check"></i>
+              <div class="info-text">
+                <strong>Secure Payment</strong>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="info-item">
+              <i data-lucide="truck"></i>
+              <div class="info-text">
+                <strong>Free Shipping</strong>
+                <span>Over $100</span>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="info-item">
+              <i data-lucide="refresh-cw"></i>
+              <div class="info-text">
+                <strong>Easy Returns</strong>
+                <span>30 Days</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column: Gallery -->
+        <div class="product-gallery">
+          <div class="gallery-item active" data-src="assets/hero.png">
+            <img src="assets/hero.png" alt="Detail 1" />
+          </div>
+          <div class="gallery-item" data-src="assets/thumb1.png">
+            <img src="assets/thumb1.png" alt="Detail 2" />
+          </div>
+          <div class="gallery-item" data-src="assets/thumb2.png">
+            <img src="assets/thumb2.png" alt="Detail 3" />
+          </div>
+          <div class="gallery-item" data-src="assets/thumb3.png">
+            <img src="assets/thumb3.png" alt="Detail 4" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
