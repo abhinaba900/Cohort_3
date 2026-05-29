@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two Leaves and a Bud — Premium Whole Leaf Tea Sachets</title>
+  <meta name="description" content="From compostable whole leaf tea sachets and iced tea to tea lattes and matcha, we've got something for everyone." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ========================
+     ANNOUNCEMENT BAR
+======================== -->
+<div class="announcement-bar" id="ann-bar">
+  <span>FREE SHIPPING</span> on orders over $45 &nbsp;|&nbsp; Compostable sachets &amp; sustainable packaging
+  <button class="close-ann" onclick="closeAnnouncement()" aria-label="Close">×</button>
+</div>
+
+<!-- ========================
+     TOP BAR
+======================== -->
+<div class="top-bar">
+  <nav class="top-bar-inner">
+    <a href="#">Learn</a>
+    <a href="#">Tea Journal</a>
+    <a href="#">Café &amp; Wholesale</a>
+    <a href="#">Reviews</a>
+    <a href="#">Rewards</a>
+    <a href="#">Our Story</a>
+    <a href="#">Sustainability</a>
+  </nav>
+</div>
+
+<!-- ========================
+     MAIN HEADER
+======================== -->
+<header class="main-header">
+  <div class="header-inner">
+
+    <!-- Mobile Toggle -->
+    <button class="icon-btn mobile-toggle" onclick="openMobileNav()" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <line x1="3" y1="6"  x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4 C10 4 6 9 6 14 C6 20 10 24 16 26 C22 24 26 20 26 14 C26 9 22 4 16 4Z"/>
+          <path d="M13 10 C13 10 12 16 16 18 C20 16 19 10 19 10" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="16" cy="8" r="2" fill="rgba(255,255,255,0.6)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="brand">Two Leaves</span>
+        <span class="sub">and a Bud</span>
+      </div>
+    </a>
+
+    <!-- Primary Nav -->
+    <nav class="primary-nav">
+
+      <!-- Shop All -->
+      <div class="nav-item">
+        <a href="#products" class="nav-link">
+          Shop All <span class="arrow"></span>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <h4>Shop by Type</h4>
+              <a href="#">Whole Leaf Tea Sachets</a>
+              <a href="#">Loose Leaf Tea</a>
+              <a href="#">Pure Matcha</a>
+              <a href="#">Tea Lattes</a>
+              <a href="#">Iced Tea</a>
+            </div>
+            <div class="mega-col">
+              <h4>Shop by Variety</h4>
+              <a href="#">Green Tea</a>
+              <a href="#">Black Tea</a>
+              <a href="#">Herbal &amp; Tisanes</a>
+              <a href="#">White Tea</a>
+              <a href="#">Oolong Tea</a>
+            </div>
+            <div class="mega-col mega-featured">
+              <div style="font-size:72px;margin-bottom:8px">🍵</div>
+              <p>Ceremonial Matcha</p>
+              <p style="font-size:13px;color:var(--green-mid);font-weight:700;margin-top:4px">$18.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Whole Leaf -->
+      <div class="nav-item">
+        <a href="#" class="nav-link">
+          Whole Leaf Sachets <span class="arrow"></span>
+        </a>
+        <div class="mega-menu" style="min-width:360px">
+          <div class="mega-cols" style="grid-template-columns:1fr 1fr">
+            <div class="mega-col">
+              <h4>Collections</h4>
+              <a href="#">Classic Black Teas</a>
+              <a href="#">Green Teas</a>
+              <a href="#">White Teas</a>
+              <a href="#">Herbal Blends</a>
+              <a href="#">Caffeine-Free</a>
+            </div>
+            <div class="mega-col">
+              <h4>Best Sellers</h4>
+              <a href="#">Organic Earl Grey</a>
+              <a href="#">Organic Chamomile</a>
+              <a href="#">English Breakfast</a>
+              <a href="#">Peppermint</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matcha -->
+      <div class="nav-item">
+        <a href="#" class="nav-link">Pure Matcha</a>
+      </div>
+
+      <!-- Lattes -->
+      <div class="nav-item">
+        <a href="#" class="nav-link">
+          Tea Lattes <span class="arrow"></span>
+        </a>
+        <div class="mega-menu" style="min-width:320px">
+          <div class="mega-cols" style="grid-template-columns:1fr 1fr">
+            <div class="mega-col">
+              <h4>Latte Blends</h4>
+              <a href="#">Chai Latte Mix</a>
+              <a href="#">Matcha Latte Mix</a>
+              <a href="#">Golden Turmeric Latte</a>
+            </div>
+            <div class="mega-col">
+              <h4>Style</h4>
+              <a href="#">Sweetened</a>
+              <a href="#">Unsweetened</a>
+              <a href="#">Dairy-Free</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Iced Tea -->
+      <div class="nav-item">
+        <a href="#" class="nav-link">Iced Tea</a>
+      </div>
+
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <button class="icon-btn" onclick="openSearch()" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+      <a href="#" class="icon-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+      <button class="icon-btn" onclick="openCart()" aria-label="Cart" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="cart-badge" id="cart-count">0</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ========================
+     HERO
+======================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Premium Whole Leaf Tea</div>
+      <h1 class="hero-title">
+        A cup that fits<br>
+        <span class="accent">the moment</span>
+      </h1>
+      <p class="hero-desc">
+        From compostable whole leaf tea sachets and iced tea to tea lattes and matcha, we've got something for everyone.
+      </p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn-primary">
+          Shop Now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a href="#tea-guide" class="btn-secondary">Learn About Tea</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Tea Varieties</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">25K+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Organic</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">B Corp</div>
+          <div class="stat-label">Certified</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-tea-cup">
+        <span class="tea-cup-icon">🍵</span>
+      </div>
+      <div class="floating-badge b1">
+        <div class="badge-label">Rating</div>
+        <div class="badge-value">⭐ 4.9 / 5</div>
+      </div>
+      <div class="floating-badge b2">
+        <div class="badge-label">Free Shipping</div>
+        <div class="badge-value">Orders $45+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     CATEGORIES STRIP
+======================== -->
+<section class="categories">
+  <div class="cat-grid">
+    <div class="cat-card" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <span class="cat-icon">🫖</span>
+      <div class="cat-name">Whole Leaf Sachets</div>
+      <div class="cat-count">32 products</div>
+    </div>
+    <div class="cat-card" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <span class="cat-icon">🍵</span>
+      <div class="cat-name">Pure Matcha</div>
+      <div class="cat-count">8 products</div>
+    </div>
+    <div class="cat-card" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <span class="cat-icon">☕</span>
+      <div class="cat-name">Tea Lattes</div>
+      <div class="cat-count">12 products</div>
+    </div>
+    <div class="cat-card" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <span class="cat-icon">🧊</span>
+      <div class="cat-name">Iced Tea</div>
+      <div class="cat-count">10 products</div>
+    </div>
+    <div class="cat-card" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <span class="cat-icon">🎁</span>
+      <div class="cat-name">Gift Sets</div>
+      <div class="cat-count">6 products</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     PRODUCTS SECTION
+======================== -->
+<section class="section" id="products">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Our Collection</span>
+      <h2 class="section-title">Quality, Without Pretense</h2>
+      <p class="section-desc">Hand-selected leaves. Transparent sourcing. Packaged in compostable sachets designed for your lifestyle.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="tabs-wrapper">
+      <div class="tabs" style="margin-bottom:32px">
+        <button class="tab-btn active" data-tab="all"     onclick="filterProducts('all',this)">All Teas</button>
+        <button class="tab-btn"        data-tab="sachets" onclick="filterProducts('sachets',this)">Sachets</button>
+        <button class="tab-btn"        data-tab="matcha"  onclick="filterProducts('matcha',this)">Matcha</button>
+        <button class="tab-btn"        data-tab="lattes"  onclick="filterProducts('lattes',this)">Lattes</button>
+        <button class="tab-btn"        data-tab="iced"    onclick="filterProducts('iced',this)">Iced Tea</button>
+      </div>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+      <!-- Rendered by JS -->
+    </div>
+
+    <div style="text-align:center;margin-top:48px">
+      <a href="#" class="btn-primary" style="background:var(--green-dark);color:#fff;padding:15px 40px;border-radius:50px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px">
+        Explore All Teas
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     FEATURED STRIP
+======================== -->
+<section class="featured-strip">
+  <div class="featured-strip-inner">
+    <div class="featured-content">
+      <span class="section-eyebrow">Featured Blends</span>
+      <h2 class="section-title">Sip Into Something Special</h2>
+      <p class="section-desc">Our most-loved blends, crafted for every mood — from the boldest morning wake-up to the gentlest evening wind-down.</p>
+      <a href="#products" class="btn-light">
+        Shop Featured
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+    <div class="featured-img-grid">
+      <div class="feat-img-card" onclick="addToCart(1)">
+        <span class="feat-emoji">🍵</span>
+        <div class="feat-name">Ceremonial Matcha</div>
+        <div class="feat-price">$18.99</div>
+      </div>
+      <div class="feat-img-card" onclick="addToCart(2)">
+        <span class="feat-emoji">☕</span>
+        <div class="feat-name">Nice Chai Latte</div>
+        <div class="feat-price">$14.99</div>
+      </div>
+      <div class="feat-img-card" onclick="addToCart(7)">
+        <span class="feat-emoji">🌼</span>
+        <div class="feat-name">Organic Chamomile</div>
+        <div class="feat-price">$10.49</div>
+      </div>
+      <div class="feat-img-card" onclick="addToCart(3)">
+        <span class="feat-emoji">🫖</span>
+        <div class="feat-name">Organic Earl Grey</div>
+        <div class="feat-price">$12.49</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     VALUE PROPS
+======================== -->
+<section class="value-props">
+  <div class="value-grid">
+    <div class="value-card">
+      <div class="value-icon">🌿</div>
+      <div class="value-title">100% Organic</div>
+      <p class="value-desc">Every leaf is certified organic and sourced directly from trusted gardens around the world.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">♻️</div>
+      <div class="value-title">Compostable Sachets</div>
+      <p class="value-desc">Our plant-based sachets are fully compostable — sip sustainably, every single cup.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🚚</div>
+      <div class="value-title">Free Shipping $45+</div>
+      <p class="value-desc">Complimentary shipping on all US orders over $45. Fast, reliable delivery nationwide.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🤝</div>
+      <div class="value-title">Fair Trade Partners</div>
+      <p class="value-desc">We pay fair wages and build lasting relationships with our garden partners globally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     TEA GUIDE
+======================== -->
+<section class="tea-guide section" id="tea-guide">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Tea Education</span>
+      <h2 class="section-title">Find Your Perfect Steep</h2>
+      <p class="section-desc">Not sure where to start? Explore our tea types and discover the one that fits your moment.</p>
+    </div>
+
+    <div class="tabs-wrapper">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="green"  onclick="switchTab(this)">Green Tea</button>
+        <button class="tab-btn"        data-tab="black"  onclick="switchTab(this)">Black Tea</button>
+        <button class="tab-btn"        data-tab="herbal" onclick="switchTab(this)">Herbal</button>
+        <button class="tab-btn"        data-tab="matcha" onclick="switchTab(this)">Matcha</button>
+      </div>
+
+      <!-- Green -->
+      <div class="tab-content active" data-content="green">
+        <div class="tea-types-grid">
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">🍃</div>
+            <div class="tea-type-body">
+              <h3>Sencha Green</h3>
+              <p>Fresh, grassy, and vegetal — Japan's most popular daily green tea. Light and refreshing with a clean finish.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>175°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>2–3 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>Medium</div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7)">🌸</div>
+            <div class="tea-type-body">
+              <h3>Tropical Green</h3>
+              <p>Sencha base with mango, pineapple, and coconut. A vibrant, fruity green tea perfect for warm afternoons.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>175°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>2–3 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>Medium</div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#e0f2f1,#b2dfdb)">🌿</div>
+            <div class="tea-type-body">
+              <h3>Jasmine Green</h3>
+              <p>Delicate green tea scented with jasmine blossoms. Floral, soft, and endlessly drinkable hot or iced.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>175°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>2 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>Low–Med</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Black -->
+      <div class="tab-content" data-content="black">
+        <div class="tea-types-grid">
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#fbe9e7,#ffccbc)">🫖</div>
+            <div class="tea-type-body">
+              <h3>English Breakfast</h3>
+              <p>Bold, malty Assam blend that stands up to milk. The quintessential morning cup with full body and depth.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>212°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>3–5 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>High</div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7)">🌸</div>
+            <div class="tea-type-body">
+              <h3>Earl Grey</h3>
+              <p>Classic Darjeeling black tea with natural bergamot oil. Bright, aromatic, and beloved worldwide.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>212°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>3–4 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>High</div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#fff8e1,#ffecb3)">✨</div>
+            <div class="tea-type-body">
+              <h3>Darjeeling First Flush</h3>
+              <p>The "Champagne of Teas" — delicate, muscatel notes from spring-harvested Darjeeling gardens.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>195°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>3 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>Medium</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Herbal -->
+      <div class="tab-content" data-content="herbal">
+        <div class="tea-types-grid">
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0)">🌼</div>
+            <div class="tea-type-body">
+              <h3>Chamomile</h3>
+              <p>Whole chamomile flowers with a sweet, apple-like aroma. The ultimate relaxation tea — caffeine-free.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>212°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>5–7 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>None</div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">🌿</div>
+            <div class="tea-type-body">
+              <h3>Peppermint</h3>
+              <p>100% pure peppermint leaf. Intensely cool and refreshing — perfect hot or cold, day or night.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>212°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>5 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>None</div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#fce4ec,#f48fb1)">🌺</div>
+            <div class="tea-type-body">
+              <h3>Hibiscus Berry</h3>
+              <p>Tart hibiscus petals with blackberry and rosehip. Ruby-red, rich in Vitamin C, and stunning over ice.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>212°F</div>
+                <div class="tea-meta-item"><strong>Steep Time</strong>5 min</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>None</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matcha -->
+      <div class="tab-content" data-content="matcha">
+        <div class="tea-types-grid">
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#e8f5e9,#a5d6a7)">🍵</div>
+            <div class="tea-type-body">
+              <h3>Ceremonial Grade</h3>
+              <p>The highest grade matcha, stone-ground from shade-grown leaves in Uji, Japan. Smooth, umami-rich, and vibrant green.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Steep Temp</strong>165°F</div>
+                <div class="tea-meta-item"><strong>Amount</strong>1–2 tsp</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>Medium</div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#f1f8e9,#dcedc8)">💚</div>
+            <div class="tea-type-body">
+              <h3>Matcha Latte Mix</h3>
+              <p>Pre-sweetened ceremonial matcha blend designed to mix perfectly with steamed milk. Café quality at home.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Mix</strong>2 tsp</div>
+                <div class="tea-meta-item"><strong>With</strong>8 oz milk</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>Medium</div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-type-card">
+            <div class="tea-type-top" style="background:linear-gradient(135deg,#e0f2f1,#80cbc4)">🌱</div>
+            <div class="tea-type-body">
+              <h3>Culinary Grade</h3>
+              <p>Robust, affordable matcha perfect for baking, smoothies, and lattes. More earthy flavor than ceremonial grade.</p>
+              <div class="tea-meta">
+                <div class="tea-meta-item"><strong>Best For</strong>Cooking</div>
+                <div class="tea-meta-item"><strong>Amount</strong>1–3 tsp</div>
+                <div class="tea-meta-item"><strong>Caffeine</strong>Medium</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end tabs-wrapper -->
+  </div>
+</section>
+
+<!-- ========================
+     BESTSELLERS CAROUSEL
+======================== -->
+<section class="bestsellers section-alt section" id="bestsellers">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Top Picks</span>
+      <h2 class="section-title">Best Sellers</h2>
+      <p class="section-desc">The teas our community can't stop brewing — tried, tested, and loved.</p>
+    </div>
+    <div class="carousel-wrap">
+      <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carousel-track">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+      <button class="carousel-btn next" id="carousel-next" aria-label="Next">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     TESTIMONIALS
+======================== -->
+<section class="testimonials section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Customer Reviews</span>
+      <h2 class="section-title">What Our Steepers Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I've tried dozens of matcha brands and Two Leaves Ceremonial Matcha is absolutely the best. Smooth, vibrant, and no bitterness whatsoever. It's become my non-negotiable morning ritual."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <div class="author-name">Sarah M.</div>
+            <div class="author-label">Verified Buyer · Portland, OR</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The Chai Latte Mix is absolutely incredible. I make it every morning with oat milk and it tastes better than anything from a coffee shop. The spice balance is perfect — warm without being overpowering."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div>
+            <div class="author-name">James T.</div>
+            <div class="author-label">Verified Buyer · Austin, TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Love that the sachets are compostable — I can enjoy great tea without the guilt. The Earl Grey sachets are so fragrant and the flavour holds up beautifully even with a longer steep. Will reorder forever."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div>
+            <div class="author-name">Amelia R.</div>
+            <div class="author-label">Verified Buyer · Brooklyn, NY</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     BLOG / TEA JOURNAL
+======================== -->
+<section class="section section-alt" id="journal">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Tea Journal</span>
+      <h2 class="section-title">From the Steep Side</h2>
+      <p class="section-desc">Stories, brewing guides, and tea knowledge from our team of passionate tea lovers.</p>
+    </div>
+    <div class="blog-grid" id="blog-grid">
+      <!-- Rendered below -->
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="#" class="btn-primary" style="background:var(--green-dark);color:#fff;padding:14px 36px;border-radius:50px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px">
+        Read All Articles
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SUSTAINABILITY STRIP
+======================== -->
+<section class="section" style="background:linear-gradient(135deg,#1a3320,#2d5a3c);color:#fff;padding:72px 0">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto">
+      <div>
+        <span style="display:inline-block;font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#a8d5a2;font-weight:700;margin-bottom:12px">Our Commitment</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.2;margin-bottom:16px">Good Tea.<br>Good Planet.</h2>
+        <p style="font-size:17px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:28px">We're a certified B Corporation — which means we balance profit with purpose. From compostable packaging to fair-trade sourcing, every decision we make considers people and planet.</p>
+        <a href="#" style="background:#fff;color:var(--green-dark);padding:14px 32px;border-radius:50px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px">
+          Our Sustainability Story
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px;text-align:center">
+          <div style="font-size:40px;margin-bottom:12px">🌿</div>
+          <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:6px">Compostable</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6)">All sachets are plant-based and fully compostable</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px;text-align:center">
+          <div style="font-size:40px;margin-bottom:12px">🏆</div>
+          <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:6px">B Corp Certified</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6)">Meeting the highest social and environmental standards</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px;text-align:center">
+          <div style="font-size:40px;margin-bottom:12px">🤝</div>
+          <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:6px">Fair Trade</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6)">Fair wages and long-term garden partnerships</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px;text-align:center">
+          <div style="font-size:40px;margin-bottom:12px">🌍</div>
+          <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:6px">1% for Planet</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6)">1% of revenue donated to environmental nonprofits</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     NEWSLETTER
+======================== -->
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <h2>Steep with Us</h2>
+    <p>Join our community for brewing tips, new arrivals, and exclusive offers delivered straight to your inbox.</p>
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required aria-label="Email address" />
+      <button type="submit" class="btn-newsletter">Subscribe</button>
+    </form>
+    <p class="newsletter-note">No spam, ever. Unsubscribe anytime. ☕</p>
+  </div>
+</section>
+
+<!-- ========================
+     FOOTER
+======================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:0">
+        <div class="logo-icon">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;fill:white">
+            <path d="M16 4 C10 4 6 9 6 14 C6 20 10 24 16 26 C22 24 26 20 26 14 C26 9 22 4 16 4Z"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand">Two Leaves</span>
+          <span class="sub">and a Bud</span>
+        </div>
+      </div>
+      <p class="brand-desc">Premium whole leaf tea sachets crafted with organic ingredients, transparent sourcing, and a commitment to sustainability. Quality, without pretense.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook">🔵</a>
+        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+        <a href="#" class="social-link" aria-label="Pinterest">📌</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#">Shop All Teas</a>
+      <a href="#">Whole Leaf Sachets</a>
+      <a href="#">Pure Matcha</a>
+      <a href="#">Tea Lattes</a>
+      <a href="#">Iced Tea</a>
+      <a href="#">Gift Sets</a>
+      <a href="#">Subscriptions</a>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <a href="#">Tea Journal</a>
+      <a href="#">Brewing Guides</a>
+      <a href="#">Tea Education</a>
+      <a href="#">Our Story</a>
+      <a href="#">Sustainability</a>
+      <a href="#">B Corp Certification</a>
+      <a href="#">Sourcing &amp; Gardens</a>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Shipping &amp; Returns</a>
+      <a href="#">Order Status</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Café &amp; Wholesale</a>
+      <a href="#">Rewards Program</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Two Leaves and a Bud. All rights reserved. Site designed with ☕</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Settings</a>
+    </div>
+    <div class="payment-icons" title="Accepted payment methods">
+      💳 🍎 📱
+    </div>
+  </div>
+</footer>
+
+<!-- ========================
+     CART SIDEBAR
+======================== -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Your Cart 🛒</h3>
+    <button class="cart-close" onclick="closeCart()" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-items" id="cart-items-list">
+    <div class="cart-empty">
+      <p>Your cart is empty 🍵</p>
+      <button onclick="closeCart()" class="add-to-cart" style="margin-top:8px">Start Shopping</button>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="free-shipping-bar">
+      <div class="shipping-text" id="shipping-text">Add $45.00 more for FREE shipping</div>
+      <div class="shipping-progress"><div class="shipping-fill" id="shipping-fill" style="width:0%"></div></div>
+    </div>
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cart-subtotal">$0.00</strong>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:2px">Taxes calculated at checkout</p>
+    <button class="btn-checkout" onclick="showToast('🎉 Redirecting to checkout...')">Checkout Securely</button>
+  </div>
+</div>
+
+<!-- ========================
+     SEARCH OVERLAY
+======================== -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-box">
+    <div class="search-box-inner">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search-input" placeholder="Search teas, lattes, matcha…" autocomplete="off" />
+      <button onclick="closeSearch()" style="color:var(--text-muted);font-size:20px;padding:4px 8px">×</button>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+      <div style="font-size:12px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Popular Searches</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button onclick="document.getElementById('search-input').value='matcha';document.getElementById('search-input').dispatchEvent(new Event('input'))" style="background:var(--cream);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--text);transition:background .2s" onmouseover="this.style.background='var(--cream-dark)'" onmouseout="this.style.background='var(--cream)'">Matcha</button>
+        <button onclick="document.getElementById('search-input').value='chai';document.getElementById('search-input').dispatchEvent(new Event('input'))" style="background:var(--cream);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--text);transition:background .2s" onmouseover="this.style.background='var(--cream-dark)'" onmouseout="this.style.background='var(--cream)'">Chai</button>
+        <button onclick="document.getElementById('search-input').value='chamomile';document.getElementById('search-input').dispatchEvent(new Event('input'))" style="background:var(--cream);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--text);transition:background .2s" onmouseover="this.style.background='var(--cream-dark)'" onmouseout="this.style.background='var(--cream)'">Chamomile</button>
+        <button onclick="document.getElementById('search-input').value='earl grey';document.getElementById('search-input').dispatchEvent(new Event('input'))" style="background:var(--cream);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--text);transition:background .2s" onmouseover="this.style.background='var(--cream-dark)'" onmouseout="this.style.background='var(--cream)'">Earl Grey</button>
+        <button onclick="document.getElementById('search-input').value='iced';document.getElementById('search-input').dispatchEvent(new Event('input'))" style="background:var(--cream);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--text);transition:background .2s" onmouseover="this.style.background='var(--cream-dark)'" onmouseout="this.style.background='var(--cream)'">Iced Tea</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================
+     MOBILE NAV
+======================== -->
+<div class="mob-overlay" id="mob-overlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-header">
+    <div class="logo">
+      <div class="logo-icon" style="width:36px;height:36px">
+        <svg viewBox="0 0 32 32" style="width:20px;height:20px;fill:white"><path d="M16 4C10 4 6 9 6 14C6 20 10 24 16 26C22 24 26 20 26 14C26 9 22 4 16 4Z"/></svg>
+      </div>
+      <div class="logo-text"><span class="brand" style="font-size:14px">Two Leaves</span></div>
+    </div>
+    <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close">×</button>
+  </div>
+  <div class="mobile-section">Shop</div>
+  <a href="#products" onclick="closeMobileNav()">Shop All Teas</a>
+  <a href="#" onclick="closeMobileNav()">Whole Leaf Sachets</a>
+  <a href="#" onclick="closeMobileNav()">Pure Matcha</a>
+  <a href="#" onclick="closeMobileNav()">Tea Lattes</a>
+  <a href="#" onclick="closeMobileNav()">Iced Tea</a>
+  <a href="#" onclick="closeMobileNav()">Gift Sets</a>
+  <div class="mobile-section">Learn</div>
+  <a href="#tea-guide" onclick="closeMobileNav()">Tea Guide</a>
+  <a href="#journal" onclick="closeMobileNav()">Tea Journal</a>
+  <a href="#" onclick="closeMobileNav()">Our Story</a>
+  <a href="#" onclick="closeMobileNav()">Sustainability</a>
+  <div class="mobile-section">Account</div>
+  <a href="#" onclick="closeMobileNav()">Sign In</a>
+  <a href="#" onclick="closeMobileNav()">Rewards</a>
+  <a href="#" onclick="closeMobileNav()">Café &amp; Wholesale</a>
+</nav>
+
+<!-- ========================
+     TOAST CONTAINER
+======================== -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+<script src="js/main.js"></script>
+<script>
+/* ---------- PRODUCT FILTER ---------- */
+function filterProducts(category, btn) {
+  document.querySelectorAll('.tabs-wrapper .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const grid = document.getElementById('products-grid');
+  const filtered = category === 'all' ? PRODUCTS.slice(0, 8) : PRODUCTS.filter(p => p.category === category);
+  grid.style.opacity = '0';
+  setTimeout(() => {
+    grid.innerHTML = filtered.length
+      ? filtered.map(p => renderProductCard(p)).join('')
+      : `<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-muted);font-size:17px">No products found in this category.</div>`;
+    grid.style.transition = 'opacity .3s ease';
+    grid.style.opacity = '1';
+
+    /* Re-observe new cards */
+    grid.querySelectorAll('.product-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .4s ease, transform .4s ease';
+      setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, 50);
+    });
+  }, 250);
+}
+
+/* ---------- RENDER BLOG ---------- */
+(function renderBlog() {
+  const grid = document.getElementById('blog-grid');
+  if (!grid) return;
+  grid.innerHTML = BLOG_POSTS.map(p => `
+    <div class="blog-card">
+      <div class="blog-img" style="background:linear-gradient(135deg,var(--cream),var(--cream-dark))">${p.emoji}</div>
+      <div class="blog-body">
+        <span class="blog-tag">${p.tag}</span>
+        <div class="blog-title">${p.title}</div>
+        <p class="blog-excerpt">${p.excerpt}</p>
+        <div class="blog-meta">
+          <span>${p.date}</span>
+          <span>·</span>
+          <span>${p.readTime}</span>
+        </div>
+      </div>
+    </div>`).join('');
+})();
+</script>
+
+</body>
+</html>
