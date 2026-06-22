@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+  DOM Explorer — Interactive Task Manager
+  Built with pure HTML + CSS + Vanilla JavaScript (no frameworks / libraries).
+  The <body> carries a custom data attribute (data-theme) used by the theme toggle.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Explorer — Task Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<!-- data-theme stores the active theme; toggled at runtime via dataset + toggleAttribute() -->
+<body data-theme="light">
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo">🧩</span>
+      <div>
+        <h1>DOM Explorer</h1>
+        <p class="tagline">Interactive Task Manager · Pure Vanilla JavaScript</p>
+      </div>
+    </div>
+
+    <!-- Theme toggle: uses classList, dataset and toggleAttribute() -->
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+      <span class="theme-icon">🌙</span>
+      <span class="theme-label">Dark Mode</span>
+    </button>
+  </header>
+
+  <main class="layout">
+
+    <!-- ==================== 1. TASK CREATION MODULE ==================== -->
+    <section class="panel" id="creationPanel">
+      <h2 class="panel-title">➕ Create a Task</h2>
+
+      <form id="taskForm" class="task-form" autocomplete="off">
+        <div class="field">
+          <label for="taskTitle">Task Title</label>
+          <!-- NOTE: the value="" HTML attribute below is the *default* value.
+               We compare input.value (live property) vs getAttribute("value")
+               (the original attribute) in script.js — see the live demo box. -->
+          <input
+            type="text"
+            id="taskTitle"
+            name="taskTitle"
+            value=""
+            placeholder="e.g. Finish DOM assignment"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="taskCategory">Category</label>
+          <select id="taskCategory" name="taskCategory">
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="study">Study</option>
+            <option value="urgent">Urgent</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Task</button>
+      </form>
+
+      <!-- Live demonstration: Attributes vs Properties -->
+      <div class="demo-box" id="attrPropDemo">
+        <h3>🔬 Attributes vs Properties (live)</h3>
+        <p>
+          Type in the title box above, then click the button. Watch how
+          <code>input.value</code> changes while
+          <code>input.getAttribute("value")</code> stays the same.
+        </p>
+        <button type="button" class="btn btn-ghost" id="inspectInput">Inspect Title Input</button>
+        <pre id="demoOutput" class="demo-output">// results appear here</pre>
+      </div>
+    </section>
+
+    <!-- ==================== TOOLBAR: search / filter / counters ==================== -->
+    <section class="panel" id="toolbarPanel">
+      <div class="toolbar">
+        <input type="search" id="searchInput" class="search" placeholder="🔍 Search tasks..." />
+
+        <select id="filterCategory" class="filter">
+          <option value="all">All Categories</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="study">Study</option>
+          <option value="urgent">Urgent</option>
+        </select>
+
+        <button type="button" class="btn btn-danger" id="clearAll">Clear All</button>
+      </div>
+
+      <div class="counters">
+        <span class="counter">Total: <strong id="countTotal">0</strong></span>
+        <span class="counter counter-pending">Pending: <strong id="countPending">0</strong></span>
+        <span class="counter counter-done">Completed: <strong id="countDone">0</strong></span>
+      </div>
+    </section>
+
+    <!-- ==================== TASK LIST (event delegation target) ==================== -->
+    <section class="panel" id="listPanel">
+      <h2 class="panel-title">📋 Your Tasks</h2>
+      <!-- A SINGLE listener is attached to #taskList; individual cards have none.
+           This is Event Delegation in action. -->
+      <div id="taskList" class="task-list">
+        <p class="empty-state" id="emptyState">No tasks yet. Add your first task above! 🚀</p>
+      </div>
+    </section>
+
+    <!-- ==================== 7. EVENT PROPAGATION DEMO ==================== -->
+    <section class="panel" id="propagationPanel">
+      <h2 class="panel-title">🔁 Event Propagation Playground</h2>
+      <p class="panel-sub">
+        Click the button and watch the console (and the log below). Toggle between
+        <strong>Bubbling</strong> (child → parent → grandparent) and
+        <strong>Capturing</strong> (grandparent → parent → child).
+      </p>
+
+      <div class="prop-controls">
+        <label class="switch-row">
+          <input type="checkbox" id="captureToggle" />
+          <span>Use Capturing phase (unchecked = Bubbling)</span>
+        </label>
+        <button type="button" class="btn btn-ghost" id="clearPropLog">Clear Log</button>
+      </div>
+
+      <div id="grandparent" class="box grandparent">
+        grandparent
+        <div id="parent" class="box parent">
+          parent
+          <button id="child" class="box child" type="button">child — Click Me</button>
+        </div>
+      </div>
+
+      <pre id="propLog" class="demo-output">// propagation order appears here</pre>
+    </section>
+
+    <!-- ==================== 8. BROWSER RENDERING PIPELINE ==================== -->
+    <section class="panel" id="pipelinePanel">
+      <h2 class="panel-title">⚙️ Browser Rendering Pipeline</h2>
+      <p class="panel-sub">How the browser turns your HTML &amp; CSS into pixels.</p>
+
+      <div class="pipeline">
+        <div class="pipe-track">
+          <div class="pipe-card">
+            <span class="pipe-step">1</span>
+            <h4>HTML</h4>
+            <p>Raw markup sent by the server as bytes.</p>
+          </div>
+          <div class="arrow">↓</div>
+          <div class="pipe-card">
+            <span class="pipe-step">2</span>
+            <h4>Parsing &amp; Tokenization</h4>
+            <p>Bytes → characters → <em>tokens</em> (<code>&lt;div&gt;</code>, attributes…).</p>
+          </div>
+          <div class="arrow">↓</div>
+          <div class="pipe-card">
+            <span class="pipe-step">3</span>
+            <h4>DOM Tree</h4>
+            <p>Tokens become nodes linked in a parent/child tree.</p>
+          </div>
+        </div>
+
+        <div class="pipe-track">
+          <div class="pipe-card alt">
+            <span class="pipe-step">A</span>
+            <h4>CSS</h4>
+            <p>Stylesheets &amp; inline styles are downloaded.</p>
+          </div>
+          <div class="arrow">↓</div>
+          <div class="pipe-card alt">
+            <span class="pipe-step">B</span>
+            <h4>CSSOM Tree</h4>
+            <p>CSS parsed into the CSS Object Model of style rules.</p>
+          </div>
+        </div>
+
+        <div class="merge">
+          <div class="merge-node">DOM Tree</div>
+          <span class="plus">+</span>
+          <div class="merge-node">CSSOM Tree</div>
+          <span class="equals">↓</span>
+          <div class="merge-result">Render Tree</div>
+        </div>
+
+        <div class="pipe-track final">
+          <div class="pipe-card final-card">
+            <h4>Render Tree → Layout → Paint → Composite</h4>
+            <p>Only visible nodes are kept, geometry is computed (layout/reflow),
+               pixels are painted, and layers are composited to the screen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Built with ❤️ using DOM APIs · No frameworks · State saved to <code>localStorage</code></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

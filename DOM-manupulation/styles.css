@@ -1,0 +1,351 @@
+/* =========================================================================
+   DOM Explorer — Task Manager  ·  styles.css
+   Theming is driven by [data-theme] on <body>. The CSSOM built from this
+   file is combined with the DOM tree to produce the Render Tree.
+   ========================================================================= */
+
+/* ---- Design tokens: light theme (default) ---- */
+:root,
+body[data-theme="light"] {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #eef1f8;
+  --text: #1c2333;
+  --text-soft: #5b6478;
+  --border: #dfe3ee;
+  --primary: #4f46e5;
+  --primary-soft: #ebe9ff;
+  --danger: #e23b53;
+  --success: #18a558;
+  --shadow: 0 6px 24px rgba(20, 25, 50, 0.08);
+}
+
+/* ---- Design tokens: dark theme ---- */
+body[data-theme="dark"] {
+  --bg: #0f1320;
+  --surface: #1a2032;
+  --surface-2: #232b41;
+  --text: #eef1f8;
+  --text-soft: #9aa5be;
+  --border: #2d3650;
+  --primary: #8b85ff;
+  --primary-soft: #2a2c5a;
+  --danger: #ff6b81;
+  --success: #4ade80;
+  --shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------------------- Header ---------------------------- */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow);
+}
+.brand { display: flex; align-items: center; gap: 0.85rem; }
+.logo { font-size: 2rem; }
+.app-header h1 { font-size: 1.4rem; }
+.tagline { font-size: 0.8rem; color: var(--text-soft); }
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.theme-toggle:hover { transform: translateY(-1px); }
+
+/* ---------------------------- Layout ---------------------------- */
+.layout {
+  max-width: 960px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.panel-title { font-size: 1.15rem; margin-bottom: 1rem; }
+.panel-sub { color: var(--text-soft); font-size: 0.9rem; margin-bottom: 1rem; }
+
+/* ---------------------------- Forms ---------------------------- */
+.task-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 0.85rem;
+  align-items: end;
+}
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field label { font-size: 0.78rem; color: var(--text-soft); font-weight: 600; }
+
+input, select, .search, .filter {
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+input:focus, select:focus { border-color: var(--primary); }
+
+/* ---------------------------- Buttons ---------------------------- */
+.btn {
+  font: inherit;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1.15rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-danger  { background: var(--danger); color: #fff; }
+.btn-ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* ---------------------------- Demo box ---------------------------- */
+.demo-box {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+.demo-box h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+.demo-box p { font-size: 0.85rem; color: var(--text-soft); margin-bottom: 0.75rem; }
+.demo-output {
+  margin-top: 0.75rem;
+  padding: 0.85rem;
+  background: #0c1020;
+  color: #7ef0c0;
+  border-radius: 10px;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+code {
+  background: var(--primary-soft);
+  color: var(--primary);
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  font-family: "Consolas", monospace;
+  font-size: 0.85em;
+}
+
+/* ---------------------------- Toolbar ---------------------------- */
+.toolbar {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+.counters { display: flex; gap: 1rem; flex-wrap: wrap; }
+.counter {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  background: var(--surface-2);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+}
+.counter-pending strong { color: var(--danger); }
+.counter-done strong { color: var(--success); }
+
+/* ---------------------------- Task list ---------------------------- */
+.task-list { display: grid; gap: 0.85rem; }
+.empty-state { color: var(--text-soft); text-align: center; padding: 1.5rem; }
+
+.task-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: 12px;
+  background: var(--surface-2);
+  animation: pop 0.2s ease;
+}
+@keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* Category accent via attribute selectors (Attributes in CSS!) */
+.task-card[data-category="work"]     { border-left-color: #4f46e5; }
+.task-card[data-category="personal"] { border-left-color: #18a558; }
+.task-card[data-category="study"]    { border-left-color: #f59e0b; }
+.task-card[data-category="urgent"]   { border-left-color: #e23b53; }
+
+/* Completed state via data-status attribute */
+.task-card[data-status="completed"] { opacity: 0.6; }
+.task-card[data-status="completed"] .task-title { text-decoration: line-through; }
+
+.task-check { width: 1.15rem; height: 1.15rem; cursor: pointer; accent-color: var(--primary); }
+.task-body { flex: 1; min-width: 0; }
+.task-title { font-weight: 600; word-break: break-word; }
+.task-meta { font-size: 0.75rem; color: var(--text-soft); margin-top: 0.15rem; }
+.tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 700;
+}
+.task-actions { display: flex; gap: 0.4rem; }
+.icon-btn {
+  border: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 2.1rem;
+  height: 2.1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.12s ease;
+}
+.icon-btn:hover { transform: scale(1.1); }
+
+/* Inline edit input */
+.edit-input {
+  width: 100%;
+  font: inherit;
+  font-weight: 600;
+}
+
+/* ---------------------------- Propagation demo ---------------------------- */
+.prop-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.switch-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; cursor: pointer; }
+.box {
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.grandparent { background: #4f46e520; border: 2px solid #4f46e5; }
+.parent { background: #18a55820; border: 2px solid #18a558; margin-top: 1rem; }
+.child {
+  display: block;
+  width: 100%;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.box.flash { outline: 3px solid #ffd60a; outline-offset: 2px; }
+
+/* ---------------------------- Pipeline ---------------------------- */
+.pipeline { display: grid; gap: 1rem; }
+.pipe-track { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.pipe-track.final { margin-top: 0.5rem; }
+.pipe-card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: 12px;
+  padding: 1rem;
+  position: relative;
+}
+.pipe-card.alt { border-left-color: var(--success); }
+.pipe-card h4 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+.pipe-card p { font-size: 0.82rem; color: var(--text-soft); }
+.pipe-step {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.arrow { font-size: 1.3rem; color: var(--text-soft); }
+.merge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--primary-soft);
+  border-radius: 12px;
+}
+.merge-node, .merge-result {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+}
+.merge-result { background: var(--primary); color: #fff; }
+.plus, .equals { font-size: 1.3rem; font-weight: 700; color: var(--primary); }
+.final-card { border-left-color: var(--danger); max-width: 100%; }
+
+/* ---------------------------- Footer ---------------------------- */
+.app-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+}
+
+/* ---------------------------- Responsive ---------------------------- */
+@media (max-width: 640px) {
+  .task-form, .toolbar { grid-template-columns: 1fr; }
+  .app-header { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
