@@ -12,6 +12,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["--yes", "serve", "-l", "4174", "productivity-dashboard"],
       "port": 4174
+    },
+    {
+      "name": "skymart",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "4175", "skymart"],
+      "port": 4175
     }
   ]
 }

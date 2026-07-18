@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyMart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Syne:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ======== HEADER (visible after login) ======== -->
+  <header class="header hidden" id="header">
+    <a class="logo" href="#" data-nav="shop">Sky<span>Mart</span></a>
+
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="search-input" placeholder="Search products..." autocomplete="off" />
+    </div>
+
+    <nav class="header-actions">
+      <button class="icon-btn" id="orders-btn" title="My orders">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8v13H3V8"/><path d="M1 3h22v5H1z"/><path d="M10 12h4"/></svg>
+      </button>
+      <button class="icon-btn" id="cart-btn" title="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-badge hidden" id="cart-badge">0</span>
+      </button>
+      <div class="user-chip">
+        <span class="avatar" id="user-avatar">A</span>
+        <span class="user-name" id="user-name">User</span>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="logout-btn">Logout</button>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- ======== LOGIN VIEW ======== -->
+    <section class="view auth-view" id="view-login">
+      <div class="auth-split">
+        <div class="auth-hero">
+          <a class="logo logo-lg" href="#">Sky<span>Mart</span></a>
+          <p class="eyebrow">Welcome back</p>
+          <h1 class="hero-title">Shop the future.<br /><span>Today.</span></h1>
+          <p class="hero-sub">Thousands of products, lightning-fast delivery, and prices that make your wallet happy.</p>
+          <div class="hero-stats">
+            <div><strong>20K+</strong><span>Products</span></div>
+            <div><strong>50K+</strong><span>Users</span></div>
+            <div><strong>4.9★</strong><span>Rating</span></div>
+          </div>
+        </div>
+
+        <div class="auth-card">
+          <h2>Sign in</h2>
+          <p class="auth-sub">Enter your credentials to continue</p>
+          <form id="login-form" novalidate>
+            <div class="field">
+              <input type="email" id="login-email" placeholder="Email address" autocomplete="email" required />
+            </div>
+            <div class="field field-password">
+              <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" required />
+              <button type="button" class="eye-btn" data-toggle="login-password" aria-label="Show password">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <p class="form-error hidden" id="login-error"></p>
+            <button type="submit" class="btn btn-accent btn-block">Sign in</button>
+          </form>
+          <p class="auth-switch">Don't have an account? <a href="#" data-nav="register">Create one</a></p>
+          <p class="demo-hint">Demo account — <code>demo@skymart.com</code> / <code>demo123</code></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== REGISTER VIEW ======== -->
+    <section class="view auth-view hidden" id="view-register">
+      <div class="auth-center">
+        <div class="auth-card">
+          <a class="logo logo-center" href="#">Sky<span>Mart</span></a>
+          <h2>Create account</h2>
+          <p class="auth-sub">Join SkyMart and start shopping</p>
+          <form id="register-form" novalidate>
+            <div class="field">
+              <input type="text" id="reg-name" placeholder="Full name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <input type="email" id="reg-email" placeholder="Email address" autocomplete="email" required />
+            </div>
+            <div class="field field-password">
+              <input type="password" id="reg-password" placeholder="Password (min 6 chars)" autocomplete="new-password" required />
+              <button type="button" class="eye-btn" data-toggle="reg-password" aria-label="Show password">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <div class="field">
+              <input type="password" id="reg-confirm" placeholder="Confirm password" autocomplete="new-password" required />
+            </div>
+            <p class="form-error hidden" id="register-error"></p>
+            <button type="submit" class="btn btn-accent btn-block">Create Account</button>
+          </form>
+          <p class="auth-switch">Already have an account? <a href="#" data-nav="login">Sign in</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== SHOP VIEW ======== -->
+    <section class="view hidden" id="view-shop">
+      <div class="shop-hero">
+        <p class="eyebrow">New season</p>
+        <h1 class="hero-title">Gear that gets you.</h1>
+        <p class="hero-sub">Hand-picked tech, fashion and lifestyle drops — updated daily.</p>
+      </div>
+
+      <div class="shop-toolbar">
+        <div class="chips" id="category-chips"></div>
+        <select id="sort-select" class="sort-select">
+          <option value="featured">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="product-grid"></div>
+      <div class="no-results hidden" id="no-results">
+        <p>😕</p>
+        <h3>No products found</h3>
+        <p class="muted">Try a different search or category.</p>
+      </div>
+    </section>
+
+    <!-- ======== CHECKOUT VIEW ======== -->
+    <section class="view hidden" id="view-checkout">
+      <button class="back-link" data-nav="shop">← Continue shopping</button>
+      <h1 class="page-title">Checkout</h1>
+      <div class="checkout-grid">
+        <form class="checkout-form" id="checkout-form" novalidate>
+          <div class="panel">
+            <h3>Shipping details</h3>
+            <div class="field"><input type="text" id="ship-name" placeholder="Full name" required /></div>
+            <div class="field"><input type="tel" id="ship-phone" placeholder="Phone number" required /></div>
+            <div class="field"><input type="text" id="ship-address" placeholder="Street address" required /></div>
+            <div class="field-row">
+              <div class="field"><input type="text" id="ship-city" placeholder="City" required /></div>
+              <div class="field"><input type="text" id="ship-zip" placeholder="PIN / ZIP code" required /></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Payment method</h3>
+            <label class="pay-option">
+              <input type="radio" name="payment" value="Cash on Delivery" checked />
+              <span class="pay-label">💵 Cash on Delivery</span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payment" value="UPI (demo)" />
+              <span class="pay-label">📱 UPI <em>(demo)</em></span>
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payment" value="Card (demo)" />
+              <span class="pay-label">💳 Card <em>(demo)</em></span>
+            </label>
+            <p class="demo-hint">Demo checkout — no real payment is processed.</p>
+          </div>
+
+          <p class="form-error hidden" id="checkout-error"></p>
+          <button type="submit" class="btn btn-accent btn-block btn-lg">Place Order</button>
+        </form>
+
+        <aside class="panel order-summary">
+          <h3>Order summary</h3>
+          <div id="summary-items"></div>
+          <div class="summary-lines">
+            <div class="line"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+            <div class="line"><span>Shipping</span><span id="summary-shipping">$0.00</span></div>
+            <div class="line total"><span>Total</span><span id="summary-total">$0.00</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ======== ORDER SUCCESS VIEW ======== -->
+    <section class="view hidden" id="view-success">
+      <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h1>Order placed!</h1>
+        <p class="muted">Thanks for shopping with SkyMart.</p>
+        <p class="order-id">Order ID: <strong id="success-order-id">—</strong></p>
+        <p class="muted" id="success-total"></p>
+        <div class="success-actions">
+          <button class="btn btn-accent" data-nav="shop">Continue shopping</button>
+          <button class="btn btn-ghost" id="view-orders-link">View my orders</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======== CART DRAWER ======== -->
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Cart</h2>
+      <button class="icon-btn" id="cart-close" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="cart-empty" id="cart-empty">
+      <p class="cart-empty-emoji">🛒</p>
+      <p class="cart-empty-title">Cart is empty</p>
+      <p class="muted">Go shop something cool!</p>
+      <button class="btn btn-accent" id="browse-btn">Browse Products</button>
+    </div>
+
+    <div class="cart-items hidden" id="cart-items"></div>
+
+    <div class="cart-foot hidden" id="cart-foot">
+      <div class="line total"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+      <p class="muted small">Shipping calculated at checkout. Free over $50.</p>
+      <button class="btn btn-accent btn-block" id="checkout-btn">Checkout →</button>
+      <button class="btn btn-ghost btn-block btn-sm" id="clear-cart-btn">Clear cart</button>
+    </div>
+  </aside>
+
+  <!-- ======== ORDERS MODAL ======== -->
+  <div class="modal hidden" id="orders-modal">
+    <div class="modal-card">
+      <div class="drawer-head">
+        <h2>My Orders</h2>
+        <button class="icon-btn" id="orders-close" aria-label="Close orders">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="orders-list"></div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toast-wrap"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
